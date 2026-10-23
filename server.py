@@ -1,3 +1,10 @@
+"""
+Flask Server for Emotion Detection Application
+
+This module provides a web server that exposes an emotion detection API
+using the EmotionDetection package.
+"""
+
 from flask import Flask, render_template, request
 from EmotionDetection.emotion_detection import emotion_detector
 
@@ -33,7 +40,7 @@ def emotion_detector_route():
     # Check if the result is valid
     if result['dominant_emotion'] is None:
         return "Invalid text! Please try again!"
-    
+
     response = (
         f"For the given statement, the system response is "
         f"'anger': {result['anger']}, "
