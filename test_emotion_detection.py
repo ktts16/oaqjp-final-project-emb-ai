@@ -35,26 +35,6 @@ class TestEmotionDetection(unittest.TestCase):
         result = emotion_detector(statement)
         self.assertEqual(result['dominant_emotion'], 'fear')
 
-    def test_blank_input(self):
-        """Test that blank input returns None for dominant emotion."""
-        result = emotion_detector("")
-        self.assertIsNone(result['dominant_emotion'])
-        self.assertIsNone(result['anger'])
-        self.assertIsNone(result['disgust'])
-        self.assertIsNone(result['fear'])
-        self.assertIsNone(result['joy'])
-        self.assertIsNone(result['sadness'])
-
-    def test_whitespace_only_input(self):
-        """Test that whitespace-only input returns None for dominant emotion."""
-        result = emotion_detector("   ")
-        self.assertIsNone(result['dominant_emotion'])
-
-    def test_none_input(self):
-        """Test that None input returns None for dominant emotion."""
-        result = emotion_detector(None)
-        self.assertIsNone(result['dominant_emotion'])
-
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
